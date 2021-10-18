@@ -1,0 +1,19 @@
+
+a.
+val x = Flip(0.4)
+val y = Flip(0.4)
+val z = x
+val w = x === z
+println(VariableElimination.probability(w, true))
+guess-> 1.0
+console -> 1.0
+
+
+b.
+val x = Flip(0.4)
+val y = Flip(0.4)
+val z = y
+val w = x === z
+println(VariableElimination.probability(w, true))
+guess -> 0.1.0
+console -> 0.52
