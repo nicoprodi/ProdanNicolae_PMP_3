@@ -5,9 +5,12 @@ import com.cra.figaro.algorithm.factored.VariableElimination
 object Ex34 {
 
   def main(args: Array[String]) {
-	val zar1 = FromRange(1, 7)
-	val zar2 = FromRange(1, 7)
-	val suma = Apply(zar1, zar2, (z1: Int, z2: Int) => z1 + z2)
-	println(VariableElimination.probability(suma, 11))
+	val die1 = FromRange(1, 7)
+	val die2 = FromRange(1, 7)
+	val die3 = FromRange(1, 7)
+	val total = Apply(die1, Apply(die2, die3, (i3: Int, i4: Int) => i3+i4), (i1: Int, i2: Int) => i1 + i2)
+	println(VariableElimination.probability(total, 11))
   }
 }
+
+/**  Pentru varianta cu doua zaruri rezultatul afisat este 0.0(5) deoarece exista doar 2 combinatii : (5,6); (6,5)*/
