@@ -1,0 +1,8 @@
+Outputul HelloWorld este
+"Oh no, not again!": 0.64
+
+Outputul dupa modificare 
+"Oh no, not again!": 0.7200000000000001
+
+probabilitatea dupa adaugarea variabilei goodSideOfBed creste intrucat daca goodSideOfBed este fals "Oh no, not again!" 
+sigur va fi afisat;
