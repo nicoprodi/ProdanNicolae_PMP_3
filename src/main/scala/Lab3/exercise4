@@ -1,0 +1,13 @@
+import com.cra.figaro.language._
+import com.cra.figaro.library.atomic.discrete.FromRange
+import com.cra.figaro.algorithm.factored.VariableElimination
+
+object Ex34 {
+
+  def main(args: Array[String]) {
+	val zar1 = FromRange(1, 7)
+	val zar2 = FromRange(1, 7)
+	val suma = Apply(zar1, zar2, (z1: Int, z2: Int) => z1 + z2)
+	println(VariableElimination.probability(suma, 11))
+  }
+}
