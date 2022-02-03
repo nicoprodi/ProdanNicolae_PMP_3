@@ -13,34 +13,33 @@ object partial2
 		val pupular: Element[Boolean]
 	}
 	
-	class Initial() extends Autor
+	class Album(atr: Autor, val calitate: Float) extends Autor
 	{
-		val pupular = Flip(0.2)
-	}
-
-	
-	abstract class Album(atr: Autor) extends Autor
-	{
-		calitate: Float
+		pupular = Flip(0.2)
 	}
 	
 	class Nominalizare(albm: Album) extends Album
 	{
-		val x1 : Element[Boolean]
-		val x2 : Float
-		def getProb()
+		
+		def getProb() : Float
 		{
-			if(!albm.atr.pupular && calitate== 0.13)
-			{
-				x1 = true
-			}
+			val ret = RichCPD(albm.pupular, albm.calitate,
+			(true, 0.27) -> 0.003,
+			(false, 0.27) -> 0.014,
+			(true, 0.6) -> 0.043,
+			(false, 0.6) -> 0.016,
+			(true, 0.13) -> 0.18,
+			(false, 0.13) -> 0.047
+			)
+			return ret
 		}
 		
 	}
 	
 	def main(args: Array[String])
 	{
-
-
+		val b = Array[Element[new Autor()]]
+		val a = Array[Element[new Album(true, 0.27)]]
+		
 	}
 }
